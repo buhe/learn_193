@@ -34,6 +34,62 @@
 			<key>uniqueIdentifier</key>
 			<string>977ECB5A-B3E9-45A7-8C31-19FE9915EDC8</string>
 		</dict>
+		<key>E5E3358C-DB8B-4080-A80E-84AA5314EC12</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E5E3358C-DB8B-4080-A80E-84AA5314EC12.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>eyJibHVlcHJpbnRfYmx1ZXByaW50VmFyaWFudCI6eyJnZW5lcmljIjp7fX0sImJsdWVwcmludF9wcm92aWRlckZpbGVQYXRoU3RyaW5nIjoiXC9Vc2Vyc1wvZ3V5YW5odWFcL2NvZGVcL2dpdGh1YlwvbGVhcm5cL2xlYXJuLnhjb2RlcHJvaiIsInR5cGUiOnsiYmx1ZXByaW50Ijp7fX0sImJsdWVwcmludF9ibHVlcHJpbnRJZGVudGlmaWVyIjoiM0Y2QjI2NzIyOTFCQ0ZDMDAwQjlGQTVFIn0=</string>
+			<key>timeStartedRecording</key>
+			<real>689688514.36419296</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build for Previews learn</string>
+			<key>uniqueIdentifier</key>
+			<string>E5E3358C-DB8B-4080-A80E-84AA5314EC12</string>
+		</dict>
+		<key>EA09EBFF-DE1E-401A-BADF-3FC00AEE1C1A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EA09EBFF-DE1E-401A-BADF-3FC00AEE1C1A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>eyJ0eXBlIjp7ImJ1aWxkU3lzdGVtVGFzayI6e319LCJidWlsZFN5c3RlbVRhc2tfYnVpbGRUYXNrIjoiUHJlcGFyZSBidWlsZCJ9</string>
+			<key>timeStartedRecording</key>
+			<real>689688514.36419296</real>
+			<key>timeStoppedRecording</key>
+			<real>63113904000</real>
+			<key>title</key>
+			<string>Build for Previews learn</string>
+			<key>uniqueIdentifier</key>
+			<string>EA09EBFF-DE1E-401A-BADF-3FC00AEE1C1A</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

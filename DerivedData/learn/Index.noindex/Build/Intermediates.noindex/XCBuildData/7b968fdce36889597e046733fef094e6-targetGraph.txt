@@ -1,0 +1,13 @@
+Target dependency graph (8 targets)
+learn in learn, no dependencies
+learn in learn, no dependencies
+learnTests in learn, depends on:
+learn in learn (explicit)
+learnTests in learn, depends on:
+learn in learn (explicit)
+learnTests in learn, no dependencies
+learnUITests in learn, depends on:
+learn in learn (explicit)
+learnUITests in learn, depends on:
+learn in learn (explicit)
+learnUITests in learn, no dependencies
