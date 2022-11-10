@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
-options: "81a38d05ece333ea614881a79e9c63b886fa6d2a25cb7292c3f7c0642a0193e0"
-build_start_time: [1667995720, 778026103]
-build_end_time: [1667995720, 935137033]
-inputs:
-  "/Users/guyanhua/code/github/learn/learn/ContentView.swift": [1667995712, 438148021]
-  "/Users/guyanhua/code/github/learn/learn/learnApp.swift": [1667995712, 435886383]
