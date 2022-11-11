@@ -14,6 +14,8 @@
 		3F6B2688291BCFC100B9FA5E /* learnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B2687291BCFC100B9FA5E /* learnTests.swift */; };
 		3F6B2692291BCFC100B9FA5E /* learnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B2691291BCFC100B9FA5E /* learnUITests.swift */; };
 		3F6B2694291BCFC100B9FA5E /* learnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B2693291BCFC100B9FA5E /* learnUITestsLaunchTests.swift */; };
+		3F6B26A1291E2EC400B9FA5E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A0291E2EC400B9FA5E /* Model.swift */; };
+		3F6B26A3291E2EE400B9FA5E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		3F6B268D291BCFC100B9FA5E /* learnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6B2691291BCFC100B9FA5E /* learnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnUITests.swift; sourceTree = "<group>"; };
 		3F6B2693291BCFC100B9FA5E /* learnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F6B26A0291E2EC400B9FA5E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				3F6B2678291BCFC000B9FA5E /* ContentView.swift */,
 				3F6B267A291BCFC100B9FA5E /* Assets.xcassets */,
 				3F6B267C291BCFC100B9FA5E /* Preview Content */,
+				3F6B26A0291E2EC400B9FA5E /* Model.swift */,
+				3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */,
 			);
 			path = learn;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6B2679291BCFC000B9FA5E /* ContentView.swift in Sources */,
+				3F6B26A1291E2EC400B9FA5E /* Model.swift in Sources */,
+				3F6B26A3291E2EE400B9FA5E /* ViewModel.swift in Sources */,
 				3F6B2677291BCFC000B9FA5E /* learnApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
