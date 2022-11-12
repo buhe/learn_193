@@ -18,9 +18,7 @@ struct Model<T: Equatable> {
             
             
             if let b = before {
-                for idx in 0..<num*2 {
-                    cards[idx].isFaceUp = false
-                }
+                
                 if cards[b].c == cards[i].c {
                     print("match!")
                     cards[b].isMacthed = true
@@ -28,6 +26,9 @@ struct Model<T: Equatable> {
                 }
                 before = nil
             } else {
+                for idx in 0..<num*2 {
+                    cards[idx].isFaceUp = false
+                }
                 before = i
             }
             cards[i].isFaceUp.toggle()
