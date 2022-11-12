@@ -8,32 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel: ViewModel
     let e = ["😜", "😀", "😄", "😆", "🥹", "🥰"]
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
-                    ForEach(e, id: \.self){
-                        emo in CardView(c: emo).aspectRatio(2/3, contentMode: .fit)
+                    ForEach(viewModel.model.cards){
+                        card in CardView(card: card).aspectRatio(2/3, contentMode: .fit).onTapGesture {
+                            viewModel.select(card)
+                        }
                     }
                 }
                 .foregroundColor(.red)
             }
-            Spacer()
-            HStack {
-                Button(action: {
-                    
-                }, label: {
-                    Text("Remove")
-                })
-                Spacer()
-                Button(action: {
-                    
-                }, label: {
-                    Text("Add")
-                })
-            }.padding(.horizontal)
-         
         }
         .padding(.horizontal)
     }
@@ -41,29 +29,30 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-        ContentView()
+        let vm = ViewModel()
+        ContentView(viewModel: vm)
+        ContentView(viewModel: vm)
             .preferredColorScheme(.dark)
     }
 }
 
 struct CardView: View {
-    @State var isFaceup = true
-    var c = ""
+    var card: Model<String>.Card
     var body: some View {
         ZStack {
-            if isFaceup {
+            if card.isMacthed {
+                RoundedRectangle(cornerRadius: 25).opacity(0)
+            } else if card.isFaceUp {
                 RoundedRectangle(cornerRadius: 25).fill().foregroundColor(.white)
                 RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
                     
-                Text(c)
+                Text(card.c)
             } else {
                 RoundedRectangle(cornerRadius: 25).fill()
                     
             }
-        }
-        .onTapGesture {
-            isFaceup = !isFaceup
+            
+        
         }
     }
 }

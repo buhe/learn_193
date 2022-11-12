@@ -6,12 +6,16 @@
 //
 
 import Foundation
-class ViewModel {
-    var model: Model<String>
+class ViewModel: ObservableObject {
+    @Published var model: Model<String>
     static let e = ["😜", "😀", "😄", "😆", "🥹", "🥰"]
     init() {
         model = Model(num: ViewModel.e.count) {
             i in ViewModel.e[i]
         }
+    }
+    
+    func select(_ card: Model<String>.Card) {
+        model.select(card)
     }
 }
