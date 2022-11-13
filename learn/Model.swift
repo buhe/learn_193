@@ -37,7 +37,6 @@ struct Model<T: Equatable> {
         {
             if let b = before {
                 if cards[b].c == cards[i].c {
-                    print("match!")
                     cards[b].isMacthed = true
                     cards[i].isMacthed = true
                 }
