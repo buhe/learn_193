@@ -8,30 +8,44 @@
 import Foundation
 struct Model<T: Equatable> {
     var num: Int
-    var before: Int?
+    var before: Int? {
+        get {
+            var faceUps = [Int]()
+            for i in cards.indices {
+                if cards[i].isFaceUp {
+                    faceUps.append(i)
+                }
+            }
+            return faceUps.onlyOne
+        }
+        set {
+            for idx in cards.indices {
+                if idx != newValue {
+                    cards[idx].isFaceUp = false
+                } else {
+                    cards[idx].isFaceUp = true
+                }
+                
+            }
+        }
+    }
     mutating func select(_ card: Card) {
         let selectIdx = cards.firstIndex(where: { $0.id == card.id })
         if let i = selectIdx,
            !cards[i].isMacthed,
            !cards[i].isFaceUp
         {
-            
-            
             if let b = before {
-                
                 if cards[b].c == cards[i].c {
                     print("match!")
                     cards[b].isMacthed = true
                     cards[i].isMacthed = true
                 }
-                before = nil
+                cards[i].isFaceUp = true
             } else {
-                for idx in 0..<num*2 {
-                    cards[idx].isFaceUp = false
-                }
                 before = i
             }
-            cards[i].isFaceUp.toggle()
+            
         }
     }
     init(num: Int, makeCard: (Int) -> T) {
@@ -48,5 +62,15 @@ struct Model<T: Equatable> {
         var isMacthed: Bool
         var c: T
         var id:Int
+    }
+}
+
+extension Array {
+    var onlyOne: Element? {
+        if self.count == 1 {
+            return self.first
+        } else {
+            return nil
+        }
     }
 }

@@ -39,20 +39,23 @@ struct ContentView_Previews: PreviewProvider {
 struct CardView: View {
     var card: Model<String>.Card
     var body: some View {
-        ZStack {
-            if card.isMacthed {
-                RoundedRectangle(cornerRadius: 25).opacity(0)
-            } else if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 25).fill().foregroundColor(.white)
-                RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
-                    
-                Text(card.c)
-            } else {
-                RoundedRectangle(cornerRadius: 25).fill()
-                    
-            }
+        GeometryReader {
+            g in
+            ZStack {
+                if card.isMacthed {
+                    RoundedRectangle(cornerRadius: 25).opacity(0)
+                } else if card.isFaceUp {
+                    RoundedRectangle(cornerRadius: 25).fill().foregroundColor(.white)
+                    RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
+                        
+                    Text(card.c).font(Font.system(size: min(g.size.height, g.size.width) * 0.8))
+                } else {
+                    RoundedRectangle(cornerRadius: 25).fill()
+                        
+                }
+                
             
-        
+            }
         }
     }
 }
