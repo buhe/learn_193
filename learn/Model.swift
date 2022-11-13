@@ -10,23 +10,10 @@ struct Model<T: Equatable> {
     var num: Int
     var before: Int? {
         get {
-            var faceUps = [Int]()
-            for i in cards.indices {
-                if cards[i].isFaceUp {
-                    faceUps.append(i)
-                }
-            }
-            return faceUps.onlyOne
+            cards.indices.filter({ cards[$0].isFaceUp }).onlyOne
         }
         set {
-            for idx in cards.indices {
-                if idx != newValue {
-                    cards[idx].isFaceUp = false
-                } else {
-                    cards[idx].isFaceUp = true
-                }
-                
-            }
+            cards.indices.forEach({cards[$0].isFaceUp = ($0 == newValue)})
         }
     }
     mutating func select(_ card: Card) {
