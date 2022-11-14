@@ -12,18 +12,29 @@ struct ContentView: View {
     let e = ["😜", "😀", "😄", "😆", "🥹", "🥰"]
     var body: some View {
         VStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
-                    ForEach(viewModel.model.cards){
-                        card in CardView(card: card).aspectRatio(2/3, contentMode: .fit).onTapGesture {
-                            viewModel.select(card)
-                        }
-                    }
+            AspectView(cards: viewModel.model.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.select(card)
                 }
-                .foregroundColor(.red)
             }
         }
         .padding(.horizontal)
+    }
+}
+
+struct AspectView<Item: Identifiable, IV: View>: View {
+    var cards: [Item]
+    var content: (Item) -> IV
+
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
+                ForEach(cards){
+                    card in content(card).aspectRatio(2/3, contentMode: .fit)
+                }
+            }
+            .foregroundColor(.red)
+        }
     }
 }
 
