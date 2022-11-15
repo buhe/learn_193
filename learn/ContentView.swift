@@ -13,9 +13,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             AspectView(cards: viewModel.model.cards) { card in
-                CardView(card: card).onTapGesture {
-                    viewModel.select(card)
+                if card.isMacthed && !card.isFaceUp {
+                    Rectangle().opacity(0)
+                } else {
+                    CardView(card: card).onTapGesture {
+                        viewModel.select(card)
+                    }
                 }
+                
             }
         }
         .padding(.horizontal)
@@ -25,7 +30,10 @@ struct ContentView: View {
 struct AspectView<Item: Identifiable, IV: View>: View {
     var cards: [Item]
     var content: (Item) -> IV
-
+    init(cards: [Item], @ViewBuilder content: @escaping (Item) -> IV) {
+        self.cards = cards
+        self.content = content
+    }
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
@@ -53,9 +61,7 @@ struct CardView: View {
         GeometryReader {
             g in
             ZStack {
-                if card.isMacthed {
-                    RoundedRectangle(cornerRadius: 25).opacity(0)
-                } else if card.isFaceUp {
+                if card.isFaceUp {
                     RoundedRectangle(cornerRadius: 25).fill().foregroundColor(.white)
                     RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
                         
