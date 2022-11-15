@@ -20,7 +20,6 @@ struct ContentView: View {
                         viewModel.select(card)
                     }
                 }
-                
             }
         }
         .padding(.horizontal)
@@ -61,7 +60,10 @@ struct CardView: View {
         GeometryReader {
             g in
             ZStack {
-                Text(card.c).font(Font.system(size: min(g.size.height, g.size.width) * 0.8))
+                Text(card.c).font(Font.system(size: 32))
+                    .scaleEffect(min(g.size.height, g.size.width) / (32 / 0.8) )
+                    .rotationEffect(Angle(degrees: card.isMacthed ? 360 : 0))
+                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: false), value: card.isMacthed)
                 Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: 110 - 90)).opacity(0.4)
             }.cardify(isFaceUp: card.isFaceUp)
         }
