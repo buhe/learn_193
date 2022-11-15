@@ -17,6 +17,7 @@
 		3F6B26A1291E2EC400B9FA5E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A0291E2EC400B9FA5E /* Model.swift */; };
 		3F6B26A3291E2EE400B9FA5E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */; };
 		3F6B26A529225B4000B9FA5E /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A429225B4000B9FA5E /* Pie.swift */; };
+		3F6B26A729234AAB00B9FA5E /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B26A629234AAB00B9FA5E /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3F6B26A0291E2EC400B9FA5E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3F6B26A429225B4000B9FA5E /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		3F6B26A629234AAB00B9FA5E /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				3F6B26A0291E2EC400B9FA5E /* Model.swift */,
 				3F6B26A2291E2EE400B9FA5E /* ViewModel.swift */,
 				3F6B26A429225B4000B9FA5E /* Pie.swift */,
+				3F6B26A629234AAB00B9FA5E /* Cardify.swift */,
 			);
 			path = learn;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6B26A729234AAB00B9FA5E /* Cardify.swift in Sources */,
 				3F6B26A529225B4000B9FA5E /* Pie.swift in Sources */,
 				3F6B2679291BCFC000B9FA5E /* ContentView.swift in Sources */,
 				3F6B26A1291E2EC400B9FA5E /* Model.swift in Sources */,

@@ -61,20 +61,9 @@ struct CardView: View {
         GeometryReader {
             g in
             ZStack {
-                if card.isFaceUp {
-                    RoundedRectangle(cornerRadius: 25).fill().foregroundColor(.white)
-                    RoundedRectangle(cornerRadius: 25).stroke(lineWidth: 3)
-                        
-                    Text(card.c).font(Font.system(size: min(g.size.height, g.size.width) * 0.8))
-                    
-                    Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: 110 - 90)).opacity(0.4)
-                } else {
-                    RoundedRectangle(cornerRadius: 25).fill()
-                        
-                }
-                
-            
-            }
+                Text(card.c).font(Font.system(size: min(g.size.height, g.size.width) * 0.8))
+                Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: 110 - 90)).opacity(0.4)
+            }.cardify(isFaceUp: card.isFaceUp)
         }
     }
 }
