@@ -9,19 +9,45 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
-    let e = ["😜", "😀", "😄", "😆", "🥹", "🥰"]
+
+    @State var deal = Set<Int>()
+    
+    func d(_ card: Model<String>.Card) {
+        deal.insert(card.id)
+    }
+    
+    func un(_ c: Model<String>.Card) -> Bool{
+        !deal.contains(c.id)
+    }
     var body: some View {
         VStack {
             AspectView(cards: viewModel.model.cards) { card in
-                if card.isMacthed && !card.isFaceUp {
+                if un(card) || (card.isMacthed && !card.isFaceUp) {
                     Rectangle().opacity(0)
                 } else {
-                    CardView(card: card).onTapGesture {
+                    CardView(card: card)
+                        .transition(AnyTransition.scale)
+                        .onTapGesture {
                         withAnimation() {
                             viewModel.select(card)
                         }
                         
                     }
+                }
+            }.onAppear {
+                withAnimation(.easeIn(duration: 5)) {
+                    for c in viewModel.model.cards {
+                        d(c)
+                    }
+                }
+             
+            }
+//            Circle()
+            ZStack {
+                ForEach(viewModel.model.cards.filter(un)) {
+                    c in CardView(card: c)
+                        .frame(width: 60, height: 90)
+                        .transition(AnyTransition.scale)
                 }
             }
         }
@@ -43,7 +69,7 @@ struct AspectView<Item: Identifiable, IV: View>: View {
                     card in content(card).aspectRatio(2/3, contentMode: .fit)
                 }
             }
-            .foregroundColor(.red)
+            
         }
     }
 }

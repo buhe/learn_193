@@ -30,7 +30,7 @@ struct Cardify: Animatable, ViewModifier{
                 RoundedRectangle(cornerRadius: 25).fill()
             }
             content.opacity(ro < 90 ? 1 : 0)
-        }.rotation3DEffect(Angle(degrees: ro), axis: (0,1,0))
+        }.foregroundColor(.red).rotation3DEffect(Angle(degrees: ro), axis: (0,1,0))
     }
 }
 
