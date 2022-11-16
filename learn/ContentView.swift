@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
 
     @State var deal = Set<Int>()
+    @Namespace var ns
     
     func d(_ card: Model<String>.Card) {
         deal.insert(card.id)
@@ -19,6 +20,14 @@ struct ContentView: View {
     func un(_ c: Model<String>.Card) -> Bool{
         !deal.contains(c.id)
     }
+    
+    func delay(_ c: Model<String>.Card) -> Animation {
+        var delay = 0.0
+        if let i = viewModel.model.cards.firstIndex(where: {$0.id == c.id}) {
+            delay = Double(i) * 5 / Double(viewModel.model.cards.count)
+        }
+        return Animation.easeInOut(duration: 5).delay(delay)
+    }
     var body: some View {
         VStack {
             AspectView(cards: viewModel.model.cards) { card in
@@ -26,7 +35,8 @@ struct ContentView: View {
                     Rectangle().opacity(0)
                 } else {
                     CardView(card: card)
-                        .transition(AnyTransition.scale)
+//                        .transition(AnyTransition.scale)
+                        .matchedGeometryEffect(id: card.id, in: ns)
                         .onTapGesture {
                         withAnimation() {
                             viewModel.select(card)
@@ -35,11 +45,12 @@ struct ContentView: View {
                     }
                 }
             }.onAppear {
-                withAnimation(.easeIn(duration: 5)) {
+                
                     for c in viewModel.model.cards {
-                        d(c)
+                        withAnimation(delay(c)) {
+                            d(c)
+                        }
                     }
-                }
              
             }
 //            Circle()
@@ -47,7 +58,8 @@ struct ContentView: View {
                 ForEach(viewModel.model.cards.filter(un)) {
                     c in CardView(card: c)
                         .frame(width: 60, height: 90)
-                        .transition(AnyTransition.scale)
+                        .matchedGeometryEffect(id: c.id, in: ns)
+//                        .transition(AnyTransition.scale)
                 }
             }
         }
