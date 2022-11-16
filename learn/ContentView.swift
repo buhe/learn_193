@@ -17,7 +17,10 @@ struct ContentView: View {
                     Rectangle().opacity(0)
                 } else {
                     CardView(card: card).onTapGesture {
-                        viewModel.select(card)
+                        withAnimation() {
+                            viewModel.select(card)
+                        }
+                        
                     }
                 }
             }
