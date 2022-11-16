@@ -24,9 +24,9 @@ struct ContentView: View {
     func delay(_ c: Model<String>.Card) -> Animation {
         var delay = 0.0
         if let i = viewModel.model.cards.firstIndex(where: {$0.id == c.id}) {
-            delay = Double(i) * 5 / Double(viewModel.model.cards.count)
+            delay = Double(i) * 3 / Double(viewModel.model.cards.count)
         }
-        return Animation.easeInOut(duration: 5).delay(delay)
+        return Animation.easeInOut(duration: 1).delay(delay)
     }
     var body: some View {
         VStack {
